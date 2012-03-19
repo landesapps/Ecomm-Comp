@@ -1,0 +1,149 @@
+/*
+    Document   : styles
+    Created on : Mar 12, 2012, 1:58:31 PM
+    Author     : dlandes
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+body
+{
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-image: -webkit-linear-gradient(bottom, #52ff07, #0051f7);
+	background-image: -moz-linear-gradient(bottom, #52FF07, #0051F7);
+	margin: 5px;
+}
+
+header
+{
+	background-color: silver;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	width: 900px;
+	height: 100px;
+	margin: 0 auto;
+}
+
+header > p
+{
+	font-family: 'Seaweed Script', cursive;
+	font-size: 72px;
+	text-align: center;
+	vertical-align: middle;
+	width: 900px;
+	height: 50px;
+	color: red;
+	display: table-cell;
+}
+
+#main-nav
+{
+	margin: 0px auto;
+	width: 900px;
+	height: 60px;
+	background-color: mediumpurple;
+}
+
+nav > ul
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+#main-nav li
+{
+	list-style-type: none;
+	float: left;
+	font-size: 36px;
+	margin: 0px;
+}
+
+#main-nav a
+{
+	text-decoration: none;
+}
+
+#main-nav div
+{
+	background-image: -moz-radial-gradient(top, circle, lightgreen, mediumpurple);
+	background-image: -webkit-radial-gradient(top, circle, lightgreen, mediumpurple);
+	height: 56px;
+	width: 146px;
+	text-align: center;
+	vertical-align: middle;
+	border: 2px lightsteelblue solid;
+	color: #666;
+}
+
+#main-nav div:hover
+{
+	background-image: -moz-radial-gradient(top, circle, blue, mediumpurple);
+	background-image: -webkit-radial-gradient(top, circle, blue, mediumpurple);
+	color: white;
+}
+
+#main-nav div.selected
+{
+	background-image: -moz-radial-gradient(top, circle, blue, mediumpurple);
+	background-image: -webkit-radial-gradient(top, circle, blue, mediumpurple);
+	color: white;
+}
+
+section
+{
+	clear: both;
+	background-color: white;
+	margin: 0px auto;
+	padding: 10px 0px;
+	width: 900px;
+}
+
+.item
+{
+	width: 100%;
+	clear: both;
+}
+
+.item > div
+{
+	float: left;
+	padding: 5px;
+}
+
+.item img
+{
+	max-height: 150px;
+	max-width: 150px;
+}
+
+.item .name
+{
+	font-size: 24px;
+}
+
+#login_div
+{
+	margin: 0 auto;
+	width: 540px;
+}
+
+.quantity
+{
+	width: 20px;
+}
+
+.login
+{
+	float: left;
+}
+
+.clr
+{
+	clear: both;
+}
+
+.left
+{
+	float: left;
+}
