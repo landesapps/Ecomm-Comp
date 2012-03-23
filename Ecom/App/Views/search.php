@@ -6,7 +6,7 @@
 					<td><img src="<?php echo $item['location']; ?>" alt="<?php echo $item['name'].' image'; ?>"/></td>
 					<td class="desc">
 						<div class="name">
-							<a href="//<?php echo $_SERVER['HTTP_HOST'].'/product/index/'.$item['id']; ?>"<?php echo $item['name']; ?>
+							<a href="//<?php echo $_SERVER['HTTP_HOST'].'/product/index/'.$item['id']; ?>"><?php echo $item['name']; ?></a>
 						</div>
 						<div class="small-desc">
 							<?php echo $item['desc']; ?>

@@ -106,20 +106,23 @@ class Account
 
 		foreach($postData as $key => $dat)
 		{
-			if(strpos($key, 'billing_') !== false)
-			{
-				$billing[substr($key, 8)] = $dat;
-			}
-			else
-			{
-				$shipping[substr($key, 9)] = $dat;
-			}
+                    if($key == 'continue')
+                        continue;
+                    
+                    if(strpos($key, 'billing_') !== false)
+                    {
+                            $billing[substr($key, 8)] = $dat;
+                    }
+                    else
+                    {
+                            $shipping[substr($key, 9)] = $dat;
+                    }
 		}
 
 		if(!empty($_SESSION['cust_id']))
 		{
 			$acc_model = new Models\Account();
-
+                        
 			$acc_model->updateCustomerAddress(
 					$_SESSION['cust_id'], 'billing', $billing);
 			$acc_model->updateCustomerAddress(

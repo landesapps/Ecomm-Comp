@@ -6,28 +6,27 @@ class Account extends MVC\Model
 {
 	public function insertCustomer($email, $pass, $salt)
 	{
-		$sql = 'INSERT INTO customer (email, password, salt) VALUES (:email, :pass, :salt)';
+		$sql = 'INSERT INTO customers (email, password, salt) VALUES (:email, :pass, :salt)';
 		$this->db->query($sql, [
 			':email' => $email,
 			':pass' => $pass,
 			':salt' => $salt,
 			]);
-
-		$sql = 'SELECT id FROM customer WHERE email = :email';
+                
+		$sql = 'SELECT id FROM customers WHERE email = :email';
 		$data = $this->db->query($sql, [':email' => $email]);
-		die('end');
 		return $data[0]['id'];
 	}
 
 	public function getCustomer($email)
 	{
-		$sql = 'SELECT * FROM customer WHERE email = :email';
+		$sql = 'SELECT * FROM customers WHERE email = :email';
 		return $this->db->query($sql, [':email' => $email]);
 	}
 
 	public function getCustomerAddress($cust_id, $type)
 	{
-		$sql = 'SELECT * FROM customer_address WHERE address_type = :type AND customer_id = :customer_id';
+		$sql = 'SELECT * FROM customer_addresses WHERE type = :type AND customers_id = :customer_id';
 
 		return $this->db->query($sql, [
 			':type' => $type,
@@ -41,7 +40,7 @@ class Account extends MVC\Model
 
 		if(empty($customer))
 		{
-			$sql = 'INSERT INTO customer_address (';
+			$sql = 'INSERT INTO customer_addresses (';
 			$columns = '';
 			$holders = '';
 			$values = '';
@@ -53,14 +52,14 @@ class Account extends MVC\Model
 				$values[':'.$key] = $val;
 			}
 
-			$columns .= 'address_type, customer_id';
-			$holders .= ':type, :customer_id';
+			$columns .= 'type, customers_id';
+			$holders .= ':type, :customers_id';
 
 			$sql .= $columns.') VALUES ('.$holders.')';
 		}
 		else
 		{
-			$sql = 'UPDATE customer_address SET ';
+			$sql = 'UPDATE customer_addresses SET ';
 			$values = '';
 
 			foreach($data as $key => $val)
@@ -71,12 +70,12 @@ class Account extends MVC\Model
 
 			$sql = substr($sql, 0, -2);
 
-			$sql .= ' WHERE address_type = :type AND customer_id = :customer_id';
+			$sql .= ' WHERE type = :type AND customers_id = :customers_id';
 		}
 
 		$values[':type'] = $type;
-		$values[':customer_id'] = $cust_id;
-
+		$values[':customers_id'] = $cust_id;
+                
 		$this->db->query($sql, $values);
 	}
 }

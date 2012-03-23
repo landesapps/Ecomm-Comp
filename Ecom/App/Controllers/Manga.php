@@ -7,7 +7,7 @@ class Manga
 	public function index()
 	{
 		$product_model = new \Ecom\App\Models\Product();
-		$items = $product_model->getProducts(['type' => 'manga']);
+		$items = $product_model->getProductsByCategory('manga');
 		/*$items = [
 			0 => [
 				'name' => 'Rurouni Kenshin',
