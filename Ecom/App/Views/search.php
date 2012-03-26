@@ -1,6 +1,6 @@
 <div id="cart_div">
-	<table>
 		<?php if(!empty($items)) : ?>
+		<table>
 			<?php foreach($items as $item) : ?>
 				<tr class="item">
 					<td><img src="<?php echo $item['location']; ?>" alt="<?php echo $item['name'].' image'; ?>"/></td>
@@ -12,18 +12,18 @@
 							<?php echo $item['desc']; ?>
 						</div>
 					</td>
-					<td class="price">
+					<td class="price" id="price_<?php echo $item['prod_id']; ?>">
 						<?php echo $item['price']; ?>
 					</td>
 					<td class="checkout">
-						<input type="text" value="1" id="amount_<?php echo $item['id']; ?>" />
-						<input type="hidden" value="<?php echo $item['id']; ?>" id="prod_<?php echo $item['id']; ?>" />
-						<button onClick="addToCart(<?php echo $item['id']; ?>);">Add To Cart</button>
+						<input type="text" value="1" id="amount_<?php echo $item['prod_id']; ?>" />
+						<input type="hidden" value="<?php echo $item['prod_id']; ?>" id="prod_<?php echo $item['prod_id']; ?>" />
+						<button onClick="addToCart(<?php echo $item['prod_id']; ?>);">Add To Cart</button>
 					</td>
 				</tr>
 			<?php endforeach; ?>
+		</table>
 		<?php else : ?>
 				<p>Sorry, there doesn't appear to be anything here</p>
 		<?php endif; ?>
-	</table>
 </div>

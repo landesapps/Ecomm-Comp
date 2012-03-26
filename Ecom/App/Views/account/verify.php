@@ -3,7 +3,7 @@
 		<thead>
 			<tr>
 				<th colspan="2">Billing Address</th>
-				<th colspan="2">Shipping Address<br/><input type="checkbox" id="chkbox_same_as_billing" onclick="changeShipping();" /><label for="same_as_billing">Same as billing</label></th>
+				<th colspan="2">Shipping Address<br/><input type="checkbox" id="chkbox_same_as_billing" onclick="changeShipping();" /><label>Same as billing</label></th>
 			</tr>
 		</thead>
 		<tbody>

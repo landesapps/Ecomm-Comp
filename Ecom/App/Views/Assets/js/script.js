@@ -2,8 +2,10 @@ function addToCart(id)
 {
 	var amount = $('#amount_'+id).val();
 	var prod_id = $('#prod_'+id).val();
+	var price   = Number($.trim($('#price_'+id).html()));
+	
 	$.ajax({
-		url: '//www.ecommerce.com/cart/addToCart/'+prod_id+'/'+amount,
+		url: '//www.ecommerce.com/cart/addToCart/'+prod_id+'/'+amount+'/'+price,
 		success: function(data)
 		{
 			$('#cart_nav').html('Cart('+data+')');
@@ -15,8 +17,10 @@ function updateQty(id)
 {
 	var amount = $('#amount_'+id).val();
 	var prod_id = $('#prod_'+id).val();
+	var price   = $('#price_'+id).html();
+	
 	$.ajax({
-		url: 'cart/updateQty/'+prod_id+'/'+amount,
+		url: 'cart/updateQty/'+prod_id+'/'+amount+'/'+price,
 		success: function(data)
 		{
 			if(data != 0)

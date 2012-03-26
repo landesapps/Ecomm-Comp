@@ -1,4 +1,9 @@
 <div id="login_div">
+	<?php if(!empty($error)) : ?>
+	<div class="error">
+		<?php echo $error; ?>
+	</div>
+	<?php endif; ?>
 	<form method="post" action="//<?php echo $_SERVER['SERVER_NAME']; ?>/account/loginValidation" class="login">
 		<table>
 			<thead>
@@ -8,15 +13,15 @@
 			</thead>
 			<tbody>
 				<tr>
-					<td><label for="email">Email address:</label></td>
+					<td><label>Email address:</label></td>
 					<td><input type="text" name="email"/></td>
 				</tr>
 				<tr>
-					<td><label for="pass">Password</label></td>
+					<td><label>Password</label></td>
 					<td><input type="password" name="pass"/></td>
 				</tr>
 				<tr>
-					<td><button type="submit">Submit</button></td>
+					<td colspan="2"><button type="submit">Submit</button></td>
 				</tr>
 			</tbody>
 		</table>
@@ -31,19 +36,19 @@
 			</thead>
 			<tbody>
 				<tr>
-					<td><label for="email">Email address:</label></td>
+					<td><label>Email address:</label></td>
 					<td><input type="text" name="email"/></td>
 				</tr>
 				<tr>
-					<td><label for="pass">Password</label></td>
+					<td><label>Password</label></td>
 					<td><input type="password" name="pass"/></td>
 				</tr>
 				<tr>
-					<td><label for="pass2">Retype Password</label></td>
+					<td><label>Retype Password</label></td>
 					<td><input type="password" name="pass2"/></td>
 				</tr>
 				<tr>
-					<td><button type="submit">Submit</button></td>
+					<td colspan="2"><button type="submit">Submit</button></td>
 				</tr>
 			</tbody>
 		</table>

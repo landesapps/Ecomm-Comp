@@ -138,6 +138,13 @@ section
 	float: left;
 }
 
+.error
+{
+	font-size: 22px;
+	font-weight: bold;
+	color: red;
+}
+
 .clr
 {
 	clear: both;

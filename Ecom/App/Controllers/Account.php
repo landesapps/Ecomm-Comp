@@ -47,9 +47,12 @@ class Account
 		$views->render();
 	}
 
-	public function login()
+	public function login($error = null)
 	{
-		$content = new MVC\View('account/login.php', ['continue' => 'account/verify']);
+		$content = new MVC\View('account/login.php', [
+			'continue' => 'account/verify',
+			'error'    => $error,
+			]);
 
 		$views = new MVC\View('template.php', ['content' => $content, 'selected' => 'account']);
 		$views->render();
@@ -76,7 +79,15 @@ class Account
 				$_SESSION['cust_id'] = $customerData[0]['id'];
 				header('Location: //'.$_SERVER['HTTP_HOST'].'/'.$postData['return']);
 			}
+			else
+			{
+				Account::login('Incorrect username/password');
+			}
 
+		}
+		else
+		{
+			Account::login();
 		}
 	}
 

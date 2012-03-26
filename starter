@@ -1,0 +1,9 @@
+INSERT INTO `ecommerce`.`products` (`name`, `is_deleted`) VALUES ('Rurouni Kenshin', 0);
+INSERT INTO `ecommerce`.`product_images` (`products_id`, `location`, `primary`) VALUES (1, '/assets/index/images/manga/kenshin.jpeg', 1);
+INSERT INTO `ecommerce`.`product_descriptions` (`products_id`, `name`, `price`, `deck`, `long_desc`) VALUES (1, 'Rurouni Kenshin Manga', 25.25, 'Badass Samurai', 'Badass samurai in manga form');
+INSERT INTO `ecommerce`.`product_descriptions` (`products_id`, `name`, `price`, `deck`, `long_desc`) VALUES (1, 'Rurouni Kenshin Anime', 50.12, 'Badass Anime', 'Badass samurai in anime form');
+INSERT INTO `ecommerce`.`categories` (`name`, `parent_id`, `is_deleted`) VALUES ('Manga', 0, 0);
+INSERT INTO `ecommerce`.`categories` (`id`, `name`, `parent_id`, `is_deleted`) VALUES (NULL, 'Anime', 0, 0);
+INSERT INTO `ecommerce`.`categories` (`id`, `name`, `parent_id`, `is_deleted`) VALUES (NULL, 'Random', 0, 0);
+INSERT INTO `ecommerce`.`product_categories_map` (`product_descriptions_id`, `categories_id`) VALUES (1, 1);
+INSERT INTO `ecommerce`.`product_categories_map` (`product_descriptions_id`, `categories_id`) VALUES (2, 2);

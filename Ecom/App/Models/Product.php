@@ -62,12 +62,13 @@ class Product extends MVC\Model
 	{
 		$params = [':category' => $category];
 		$sql = 'SELECT
+					pd.id AS prod_id,
 					pd.*,
 					pi.*
 				FROM products p
 				LEFT JOIN product_images pi ON pi.products_id = p.id
 				LEFT JOIN product_descriptions pd ON pd.products_id = p.id
-				LEFT JOIN product_categories_map pcm ON pcm.products_id = p.id
+				LEFT JOIN product_categories_map pcm ON pcm.product_descriptions_id = pd.id
 				LEFT JOIN categories c ON c.id = pcm.categories_id
 				WHERE c.name = :category';
 
